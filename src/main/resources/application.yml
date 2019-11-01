@@ -1,0 +1,19 @@
+spring:
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: root
+        url: jdbc:mysql://127.0.0.1:3306/im_demo
+        username: root
+    jpa:
+        database: MYSQL
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+xncoding:
+  socket-port: 9099    #socket端口
+  ping-interval: 60000 #Ping消息间隔（毫秒）
+  ping-timeout: 180000 #Ping消息超时时间（毫秒）
