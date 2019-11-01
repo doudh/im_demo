@@ -108,7 +108,6 @@ public class MessageEventHandler
     //消息接收入口，当接收到消息后，查找发送目标客户端，并且向该客户端发送消息，且给自己发送消息
 
     @OnEvent(value = "messageevent")
-
     public void onEvent(SocketIOClient client, AckRequest request, MessageInfo data)
 
     {
@@ -136,8 +135,10 @@ public class MessageEventHandler
             sendData.setMsgContent(data.getMsgContent());
 
             client.sendEvent("messageevent", sendData);
+            SocketIOClient client1 = server.getClient(uuid);
 
             server.getClient(uuid).sendEvent("messageevent", sendData);
+
 
         }
 
